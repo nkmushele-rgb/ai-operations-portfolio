@@ -106,7 +106,9 @@ offered; Business Process Automation → Automation + Business Operations.
   `Everyone`. A signed-in "View profile" renders correctly. Treat anonymous
   visibility as unverified; do not promise a recruiter that the public link
   works until the learner checks it in a browser with no login.
-- Portfolio website is unpublished; no portfolio URL was added.
+- Portfolio website was published on 20 November 2026. On the same day the
+  `Portfolio site` field was added and the signed-in profile page was re-read:
+  it links to <https://nkmushele-rgb.github.io/ai-operations-portfolio/>.
 - CV/Resume was not uploaded because the employment dates are unconfirmed.
 - Pay rate and availability are blank / "Hourly ($/hour)" by default; these are
   commercial decisions for the learner.
