@@ -111,8 +111,8 @@ offered; Business Process Automation → Automation + Business Operations.
   it links to <https://nkmushele-rgb.github.io/ai-operations-portfolio/>.
 - Resume replaced on 20 Nov: the PDF generated from the learner's edited copy is
   attached (ID 555698) and its SHA256 matches the local file. The old record
-  (`/resumes/555664`) returns 404. Profile pay rate now reads $40/hr; the agent
-  did not set it — confirm with the learner.
+  (`/resumes/555664`) returns 404. Profile pay rate reads $40/hr; the learner
+  confirmed on 20 Nov that they set it and the agent did not change it.
 - Pay rate and availability are blank / "Hourly ($/hour)" by default; these are
   commercial decisions for the learner.
 - The "KM" monogram avatar is a placeholder; replace with a real photo.
