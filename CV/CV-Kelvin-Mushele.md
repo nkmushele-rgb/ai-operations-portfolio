@@ -38,7 +38,7 @@ Learning, not yet offered to clients: HubSpot API, Docker, Power BI.
 
 ### Stores, material security and site operations — TRAGS
 
-`[Month Year – Month Year] · Qatar`
+`[feb-2021 – nov 2026] · Qatar`
 
 - Worked in stores and material security on oil and gas sites.
 - Carried out permit receiver duties, including permit checks and coordination
@@ -49,7 +49,7 @@ Learning, not yet offered to clients: HubSpot API, Docker, Power BI.
 
 ### Sales Officer — Dutch Water Ltd
 
-`[Month Year – Month Year]`
+`[janh 2012 – feb 2013]`
 
 - Covered [confirm territory] for bottled water sales.
 - Handled customer orders, delivery coordination and collections.
@@ -57,7 +57,7 @@ Learning, not yet offered to clients: HubSpot API, Docker, Power BI.
 
 ### Route management and account development — Coastal Bottlers (Coca-Cola)
 
-`[Month Year – Month Year]`
+`[dec 2013 – jan 2021 ]`
 
 - Managed routes and developed accounts in FMCG distribution.
 - Worked to daily order, delivery and stock targets.
