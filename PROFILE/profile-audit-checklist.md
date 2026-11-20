@@ -109,10 +109,10 @@ offered; Business Process Automation → Automation + Business Operations.
 - Portfolio website was published on 20 November 2026. On the same day the
   `Portfolio site` field was added and the signed-in profile page was re-read:
   it links to <https://nkmushele-rgb.github.io/ai-operations-portfolio/>.
-- A resume PDF is attached to Hubstaff (parsed 20 Nov, ID 555664). The learner's
-  edited copy with dates is in Downloads; a PDF was prepared locally but the
-  upload/replacement is pending browser reconnection. Do not assume the attached
-  file is the edited CV.
+- Resume replaced on 20 Nov: the PDF generated from the learner's edited copy is
+  attached (ID 555698) and its SHA256 matches the local file. The old record
+  (`/resumes/555664`) returns 404. Profile pay rate now reads $40/hr; the agent
+  did not set it — confirm with the learner.
 - Pay rate and availability are blank / "Hourly ($/hour)" by default; these are
   commercial decisions for the learner.
 - The "KM" monogram avatar is a placeholder; replace with a real photo.
