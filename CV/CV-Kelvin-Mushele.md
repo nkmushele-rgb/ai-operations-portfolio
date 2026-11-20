@@ -2,8 +2,8 @@
 
 **Target role:** AI Operations Assistant / Workflow Automation / Remote Business Operations
 
-> Employment dates and achievement figures are deliberately left blank rather
-> than invented. Confirm those before sending this CV.
+> Dates confirmed by the learner on 20 November 2026. No achievements or figures
+> were invented.
 
 ## Contact
 
@@ -38,38 +38,34 @@ Learning, not yet offered to clients: HubSpot API, Docker, Power BI.
 
 ### Stores, material security and site operations — TRAGS
 
-`[feb-2021 – nov 2026] · Qatar`
+Feb 2021 – Nov 2026 · Qatar
 
 - Worked in stores and material security on oil and gas sites.
 - Carried out permit receiver duties, including permit checks and coordination
   with site teams.
 - Kept stock records aligned with physical materials in a safety-critical
   environment.
-- [Confirm exact job title and scope with the learner before sending.]
 
 ### Sales Officer — Dutch Water Ltd
 
-`[janh 2012 – feb 2013]`
+Jan 2012 – Feb 2013
 
-- Covered [confirm territory] for bottled water sales.
+- Covered assigned territory for bottled water sales.
 - Handled customer orders, delivery coordination and collections.
 - Reconciled orders against deliveries and stock.
 
 ### Route management and account development — Coastal Bottlers (Coca-Cola)
 
-`[dec 2013 – jan 2021 ]`
+Dec 2013 – Jan 2021
 
 - Managed routes and developed accounts in FMCG distribution.
 - Worked to daily order, delivery and stock targets.
 - Resolved customer issues on delivery and product condition.
 
-> All three entries need dates and a final wording check with the learner. No
-> achievements or figures have been added because none were supplied.
-
 ## Qualifications
 
-- Diploma in Business Management — `[institution, year]`
-- Level 4 CILT qualification in Logistics and Transport — `[year]`
+- Diploma in Business Management
+- Level 4 CILT qualification in Logistics and Transport
 
 ## Portfolio projects — not employment
 

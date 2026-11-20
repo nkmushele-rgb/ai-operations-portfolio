@@ -109,7 +109,10 @@ offered; Business Process Automation → Automation + Business Operations.
 - Portfolio website was published on 20 November 2026. On the same day the
   `Portfolio site` field was added and the signed-in profile page was re-read:
   it links to <https://nkmushele-rgb.github.io/ai-operations-portfolio/>.
-- CV/Resume was not uploaded because the employment dates are unconfirmed.
+- A resume PDF is attached to Hubstaff (parsed 20 Nov, ID 555664). The learner's
+  edited copy with dates is in Downloads; a PDF was prepared locally but the
+  upload/replacement is pending browser reconnection. Do not assume the attached
+  file is the edited CV.
 - Pay rate and availability are blank / "Hourly ($/hour)" by default; these are
   commercial decisions for the learner.
 - The "KM" monogram avatar is a placeholder; replace with a real photo.
