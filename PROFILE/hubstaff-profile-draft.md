@@ -82,11 +82,11 @@ Power BI.
 
 ## Portfolio links to add, in order
 
-1. Portfolio website — `index.html` (publish it first; do not link a local file)
+1. Portfolio website — <https://nkmushele-rgb.github.io/ai-operations-portfolio/>
 2. Project 1 — AI customer support triage
 3. Project 2 — AI inventory and stock control
 4. Project 3 — AI sales lead management
-5. GitHub repository, once the sanitised copy is public
+5. GitHub repository — <https://github.com/nkmushele-rgb/ai-operations-portfolio>
 
 ## Do not claim
 
