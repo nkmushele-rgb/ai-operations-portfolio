@@ -1,0 +1,88 @@
+{
+  "spec_version": 1,
+  "platform": "Make.com",
+  "verified_in_make": false,
+  "status": "Build specification, not an imported or executed blueprint",
+  "scenario": {
+    "name": "P1 - AI customer support triage",
+    "purpose": "Classify an enquiry, escalate what a human must handle, and draft a reply nobody can send without approval.",
+    "schedule": "On demand - custom webhook",
+    "steps": [
+      {
+        "step": 1,
+        "module": "Webhook > Custom webhook",
+        "label": "Customer enquiry",
+        "config": "POST. Accept external_id, customer_name, customer_email, subject and body."
+      },
+      {
+        "step": 2,
+        "module": "Tools > Set variable",
+        "label": "Validate and classify",
+        "config": "Apply make-logic.js. Output outcome, external_id, customer_email, category, urgency, sentiment, needs_review, escalate, escalation_reason, status, draft_subject, draft_body and approved. Bad input returns outcome=rejected with a problems list."
+      },
+      {
+        "step": 3,
+        "module": "Router",
+        "label": "Escalate?",
+        "config": "Route on the escalate field from step 2."
+      },
+      {
+        "step": 4,
+        "module": "Google Sheets > Add a row",
+        "label": "Human queue",
+        "config": "Append to sheet 'Escalations'. Leave inactive until a Sheets connection exists."
+      },
+      {
+        "step": 5,
+        "module": "Google Sheets > Add a row",
+        "label": "Approval queue",
+        "config": "Append to sheet 'Approval queue'. Leave inactive until a Sheets connection exists."
+      },
+      {
+        "step": 6,
+        "module": "Webhook > Webhook response",
+        "label": "Return result",
+        "config": "Return the step 2 result as JSON."
+      }
+    ],
+    "routes": [
+      {
+        "from": 1,
+        "to": 2,
+        "condition": "always"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "condition": "always"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "condition": "escalate = true"
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "condition": "escalate = false"
+      },
+      {
+        "from": 4,
+        "to": 6,
+        "condition": "always"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "condition": "always"
+      }
+    ],
+    "rules_file": "make-logic.js",
+    "rules_note": "Escalation is a rule, not a model guess: complaints, refund or legal wording, health and safety mentions and anything marked urgent go to a human.",
+    "approval_gate": "approved starts false. There is no send-email module in the default path; sending is a separate step a person triggers after approval.",
+    "error_handling": "Set optional Sheets and Email modules to continue on error so a failed write cannot block the webhook response. Retry once on transient errors. Keep the scenario in draft until credentials are configured.",
+    "credentials_required": [
+      "Google Sheets (optional - not connected in this repository)"
+    ]
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "spec_version": 1,
+  "platform": "Make.com",
+  "verified_in_make": false,
+  "status": "Build specification, not an imported or executed blueprint",
+  "scenario": {
+    "name": "P2 - AI inventory and stock control",
+    "purpose": "Rebuild stock balances and moving average cost from posted movements and flag unusual transactions.",
+    "schedule": "On demand - custom webhook",
+    "steps": [
+      {
+        "step": 1,
+        "module": "Webhook > Custom webhook",
+        "label": "Stock movements",
+        "config": "POST. Accept a products array and a movements array."
+      },
+      {
+        "step": 2,
+        "module": "Tools > Set variable",
+        "label": "Rebuild balances",
+        "config": "Apply make-logic.js. Reject unknown SKUs, unknown kinds, duplicates and oversells; output applied, rejected, rejections, alerts, stock_value, low_stock and lines."
+      },
+      {
+        "step": 3,
+        "module": "Router",
+        "label": "Alerts raised?",
+        "config": "Route on whether the alerts list from step 2 is empty."
+      },
+      {
+        "step": 4,
+        "module": "Email > Send an email",
+        "label": "Email the buyer",
+        "config": "Summarise the alerts. Leave inactive until a mailbox connection exists."
+      },
+      {
+        "step": 5,
+        "module": "Webhook > Webhook response",
+        "label": "Return result",
+        "config": "Return the step 2 result as JSON."
+      }
+    ],
+    "routes": [
+      {
+        "from": 1,
+        "to": 2,
+        "condition": "always"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "condition": "always"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "condition": "alerts is not empty"
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "condition": "alerts is empty"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "condition": "always"
+      }
+    ],
+    "rules_file": "make-logic.js",
+    "rules_note": "A single issue over 40% of stock on hand, or a purchase price more than 25% away from the average, is flagged. Oversells and duplicates are refused, never silently dropped.",
+    "approval_gate": "The email route is inactive until connected. No movement is written back to a system of record by this scenario.",
+    "error_handling": "Set optional Sheets and Email modules to continue on error so a failed write cannot block the webhook response. Retry once on transient errors. Keep the scenario in draft until credentials are configured.",
+    "credentials_required": [
+      "Email (optional - not connected in this repository)"
+    ]
+  }
+}

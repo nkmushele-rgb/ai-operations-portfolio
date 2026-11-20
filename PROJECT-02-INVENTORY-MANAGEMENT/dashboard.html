@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Inventory and Stock Control</title>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:#f4f6f8;color:#16202a;line-height:1.55;
+ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:#1d4ed8}
+.hero{background:linear-gradient(135deg,#0b2b3c 0%,#123b4f 58%,#1d4ed8 135%);color:#fff;padding:2.2rem 1.4rem 1.9rem}
+.wrap{max-width:1180px;margin:0 auto}
+.eyebrow{margin:0 0 .45rem;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;opacity:.75}
+.hero h1{margin:0 0 .55rem;font-size:clamp(1.45rem,3.1vw,2.05rem);line-height:1.2}
+.lede{margin:0;max-width:62ch;opacity:.92;font-size:.95rem}
+.stamp{margin:.85rem 0 0;font-size:.75rem;opacity:.7}
+main{max-width:1180px;margin:0 auto;padding:1.5rem 1.4rem 2.5rem}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.85rem;margin:0 0 1.5rem}
+.stat{background:#fff;border:1px solid #e2e8ee;border-radius:12px;padding:.85rem 1rem}
+.stat .k{margin:0;font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;color:#5b6b7a}
+.stat .v{margin:.22rem 0 0;font-size:1.45rem;font-weight:650;color:#1d4ed8}
+.stat .h{margin:.18rem 0 0;font-size:.73rem;color:#7a8896}
+.panel{background:#fff;border:1px solid #e2e8ee;border-radius:12px;padding:1rem 1.15rem 1.2rem;margin:0 0 1.2rem}
+.panel h2{margin:0 0 .2rem;font-size:1rem}
+.panel .desc{margin:0 0 .8rem;font-size:.83rem;color:#5b6b7a}
+.tw{overflow-x:auto;border:1px solid #eef2f6;border-radius:9px}
+table{border-collapse:collapse;width:100%;font-size:.83rem;min-width:520px}
+th{background:#f7f9fb;text-align:left;padding:.5rem .65rem;border-bottom:1px solid #e6ecf2;
+ font-size:.69rem;letter-spacing:.07em;text-transform:uppercase;color:#5b6b7a;white-space:nowrap}
+td{padding:.45rem .65rem;border-bottom:1px solid #f1f5f8;vertical-align:top}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:nth-child(even){background:#fcfdfe}
+.muted{color:#9aa7b3}
+.pill{display:inline-block;padding:.08rem .48rem;border-radius:999px;font-size:.71rem;
+ font-weight:600;border:1px solid transparent;white-space:nowrap}
+.pill-red{background:#fdeceb;color:#a52a1f;border-color:#f7cdc8}
+.pill-amber{background:#fdf5e3;color:#8a5a06;border-color:#f4e2b8}
+.pill-green{background:#e9f7ee;color:#1c6b3a;border-color:#c6e8d3}
+.pill-blue{background:#eaf2fd;color:#1a4f8a;border-color:#c9ddf7}
+.pill-grey{background:#f0f3f6;color:#4d5b68;border-color:#dfe6ec}
+.empty{padding:.9rem;color:#7a8896;font-size:.83rem}
+.notes{background:#fffdf5;border:1px solid #f0e4bf;border-radius:12px;padding:.95rem 1.15rem}
+.notes h2{margin:0 0 .45rem;font-size:.93rem;color:#7a5a10}
+.notes ul{margin:0;padding-left:1.05rem;font-size:.83rem;color:#5f5231}
+.notes li+li{margin-top:.28rem}
+footer{max-width:1180px;margin:0 auto;padding:0 1.4rem 2.2rem;font-size:.75rem;color:#7a8896}
+.back{display:inline-block;margin:0 0 .9rem;font-size:.79rem;text-decoration:none}
+@media(max-width:640px){.hero{padding:1.7rem 1rem 1.4rem}main{padding:1.1rem 1rem 2rem}}
+@media print{body{background:#fff}.back{display:none}
+ .hero{background:#0b2b3c!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <a class="back" href="../index.html">&larr; Portfolio home</a>
+    <p class="eyebrow">AI Operations Portfolio</p>
+    <h1>AI Inventory and Stock Control</h1>
+    <p class="lede">Posts receipts, issues and adjustments against a moving average cost, raises low-stock and out-of-stock alerts, values the stock and flags unusual movements for investigation.</p>
+    <p class="stamp">Generated 20 Nov 2026, 06:39 UTC</p>
+  </div>
+</header>
+<main>
+  <div class="stats"><div class="stat"><p class="k">Stock value</p><p class="v">12,276.94</p><p class="h">moving average cost</p></div><div class="stat"><p class="k">Low stock</p><p class="v">3</p><p class="h">at or below reorder level</p></div><div class="stat"><p class="k">Open alerts</p><p class="v">9</p><p class="h">unacknowledged</p></div><div class="stat"><p class="k">Issues today</p><p class="v">4</p><p class="h">value 2,821.50</p></div></div>
+  <section class="panel"><h2>Stock on hand</h2><p class="desc">Balance, reorder level and value for every product.</p><div class="tw"><table><thead><tr><th>SKU</th><th>Product</th><th>Qty</th><th>Unit</th><th>Reorder</th><th>Avg cost</th><th>Value</th><th>Status</th></tr></thead><tbody><tr><td>CLD-TEA</td><td>Iced Tea 500ml (case of 12)</td><td>18</td><td>case</td><td>20</td><td>28.40</td><td>511.20</td><td><span class="pill pill-amber">low</span></td></tr><tr><td>DAI-MLK</td><td>Long-life Milk 1L (case of 12)</td><td>34</td><td>case</td><td>35</td><td>54.04</td><td>1,837.28</td><td><span class="pill pill-amber">low</span></td></tr><tr><td>JUI-MNG</td><td>Mango Juice 1L (case of 12)</td><td>38</td><td>case</td><td>20</td><td>46.25</td><td>1,757.50</td><td><span class="pill pill-green">in stock</span></td></tr><tr><td>JUI-ORG</td><td>Orange Juice 1L (case of 12)</td><td>66</td><td>case</td><td>25</td><td>52.73</td><td>3,480.00</td><td><span class="pill pill-green">in stock</span></td></tr><tr><td>SNP-CHP</td><td>Snack Pack (carton of 24)</td><td>0</td><td>carton</td><td>10</td><td>61.00</td><td>0.00</td><td><span class="pill pill-grey">out of stock</span></td></tr><tr><td>WTR-1500</td><td>Still Water 1.5L (case of 6)</td><td>103</td><td>case</td><td>30</td><td>21.21</td><td>2,184.50</td><td><span class="pill pill-green">in stock</span></td></tr><tr><td>WTR-500</td><td>Still Water 500ml (case of 12)</td><td>82</td><td>case</td><td>40</td><td>19.38</td><td>1,589.46</td><td><span class="pill pill-green">in stock</span></td></tr><tr><td>WTR-SPK</td><td>Sparkling Water 330ml (case of 24)</td><td>28</td><td>case</td><td>15</td><td>32.75</td><td>917.00</td><td><span class="pill pill-green">in stock</span></td></tr></tbody></table></div></section><section class="panel"><h2>Open alerts</h2><p class="desc">Raised by the stock check after each movement. One open alert per product per kind.</p><div class="tw"><table><thead><tr><th>SKU</th><th>Type</th><th>Message</th><th>Raised</th></tr></thead><tbody><tr><td>JUI-MNG</td><td><span class="pill pill-red">anomaly</span></td><td>negative adjustment of 3 case</td><td>2026-11-20T06:38:07Z</td></tr><tr><td>SNP-CHP</td><td><span class="pill pill-red">anomaly</span></td><td>single issue removed 100% of stock on hand</td><td>2026-11-20T06:38:07Z</td></tr><tr><td>SNP-CHP</td><td><span class="pill pill-grey">out_of_stock</span></td><td>SNP-CHP is out of stock</td><td>2026-11-20T06:38:07Z</td></tr><tr><td>DAI-MLK</td><td><span class="pill pill-red">anomaly</span></td><td>single issue removed 47% of stock on hand</td><td>2026-11-20T06:38:06Z</td></tr><tr><td>DAI-MLK</td><td><span class="pill pill-grey">low_stock</span></td><td>DAI-MLK at 34, at or below reorder level 35</td><td>2026-11-20T06:38:06Z</td></tr><tr><td>CLD-TEA</td><td><span class="pill pill-grey">low_stock</span></td><td>CLD-TEA at 18, at or below reorder level 20</td><td>2026-11-20T06:38:06Z</td></tr><tr><td>JUI-ORG</td><td><span class="pill pill-red">anomaly</span></td><td>purchase price 68 is more than 25% away from average 44</td><td>2026-11-20T06:38:06Z</td></tr><tr><td>WTR-500</td><td><span class="pill pill-red">anomaly</span></td><td>single issue removed 98% of stock on hand</td><td>2026-11-20T06:38:06Z</td></tr><tr><td>SNP-CHP</td><td><span class="pill pill-grey">low_stock</span></td><td>SNP-CHP at 9, at or below reorder level 10</td><td>2026-11-20T06:38:06Z</td></tr></tbody></table></div></section><section class="panel"><h2>Recent movements</h2><p class="desc">The audit trail. Balances are derived from these rows, never edited in place.</p><div class="tw"><table><thead><tr><th>#</th><th>SKU</th><th>Type</th><th>Qty</th><th>Value</th><th>Reference</th><th>When</th></tr></thead><tbody><tr><td>30</td><td>WTR-500</td><td><span class="pill pill-grey">receipt</span></td><td>80</td><td>1,552.00</td><td>PO-8815</td><td>2026-11-20T13:00:00Z</td></tr><tr><td>29</td><td>JUI-MNG</td><td><span class="pill pill-grey">adjustment</span></td><td>-3</td><td>-138.75</td><td>ADJ-2201</td><td>2026-11-20T10:30:00Z</td></tr><tr><td>28</td><td>SNP-CHP</td><td><span class="pill pill-grey">issue</span></td><td>9</td><td>549.00</td><td>SO-4116</td><td>2026-11-20T10:00:00Z</td></tr><tr><td>27</td><td>DAI-MLK</td><td><span class="pill pill-grey">issue</span></td><td>30</td><td>1,621.13</td><td>SO-4115</td><td>2026-11-20T09:30:00Z</td></tr><tr><td>26</td><td>CLD-TEA</td><td><span class="pill pill-grey">issue</span></td><td>8</td><td>227.20</td><td>SO-4114</td><td>2026-11-20T08:50:00Z</td></tr><tr><td>25</td><td>WTR-1500</td><td><span class="pill pill-grey">issue</span></td><td>20</td><td>424.17</td><td>SO-4113</td><td>2026-11-20T08:15:00Z</td></tr><tr><td>24</td><td>JUI-ORG</td><td><span class="pill pill-grey">receipt</span></td><td>24</td><td>1,632.00</td><td>PO-8810</td><td>2026-11-20T07:40:00Z</td></tr><tr><td>23</td><td>WTR-500</td><td><span class="pill pill-grey">issue</span></td><td>95</td><td>1,779.66</td><td>SO-4112</td><td>2026-11-19T15:30:00Z</td></tr><tr><td>22</td><td>SNP-CHP</td><td><span class="pill pill-grey">issue</span></td><td>3</td><td>183.00</td><td>SO-4111</td><td>2026-11-19T12:00:00Z</td></tr><tr><td>21</td><td>DAI-MLK</td><td><span class="pill pill-grey">issue</span></td><td>20</td><td>1,080.75</td><td>SO-4110</td><td>2026-11-19T11:00:00Z</td></tr><tr><td>20</td><td>WTR-SPK</td><td><span class="pill pill-grey">issue</span></td><td>12</td><td>393.00</td><td>SO-4109</td><td>2026-11-19T10:20:00Z</td></tr><tr><td>19</td><td>JUI-MNG</td><td><span class="pill pill-grey">issue</span></td><td>14</td><td>647.50</td><td>SO-4108</td><td>2026-11-19T09:45:00Z</td></tr><tr><td>18</td><td>WTR-500</td><td><span class="pill pill-grey">issue</span></td><td>28</td><td>524.53</td><td>SO-4107</td><td>2026-11-19T09:10:00Z</td></tr><tr><td>17</td><td>WTR-500</td><td><span class="pill pill-grey">issue</span></td><td>30</td><td>562.00</td><td>SO-4106</td><td>2026-11-19T08:30:00Z</td></tr></tbody></table></div></section><section class="panel"><h2>Rejected input</h2><p class="desc">Movements refused by validation or stock rules, with the reason.</p><div class="tw"><table><thead><tr><th>Problem</th><th>When</th></tr></thead><tbody><tr><td>cannot issue 30 case of WTR-SPK; only 28 on hand</td><td>2026-11-20T06:38:07Z</td></tr></tbody></table></div></section>
+  <section class="notes"><h2>Limitations and assumptions</h2><ul><li>Synthetic sample data for a small drinks distributor. No client stock figures.</li><li>Costing uses a moving average. It is simple and auditable, but it is not FIFO.</li><li>Stock can never go negative: an issue larger than the balance is rejected and logged.</li><li>Anomaly rules are thresholds (40% of stock in one issue, 3x the usual issue size, 25% cost swing). They flag for review; they do not prove a problem.</li><li>No email or messaging alert is wired up. Alerts are stored and shown here only.</li></ul></section>
+</main>
+<footer>Project 2 of 3 - AI Operations portfolio. Values are demo data in QAR.</footer>
+</body>
+</html>

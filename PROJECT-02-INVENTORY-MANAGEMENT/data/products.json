@@ -1,0 +1,10 @@
+[
+  {"sku": "WTR-500",  "name": "Still Water 500ml (case of 12)",  "unit": "case", "category": "Water",    "reorder_level": 40, "opening_qty": 120, "opening_cost": 18.50},
+  {"sku": "WTR-1500", "name": "Still Water 1.5L (case of 6)",    "unit": "case", "category": "Water",    "reorder_level": 30, "opening_qty": 90,  "opening_cost": 21.00},
+  {"sku": "WTR-SPK",  "name": "Sparkling Water 330ml (case of 24)", "unit": "case", "category": "Water", "reorder_level": 15, "opening_qty": 40,  "opening_cost": 32.75},
+  {"sku": "JUI-ORG",  "name": "Orange Juice 1L (case of 12)",    "unit": "case", "category": "Juice",    "reorder_level": 25, "opening_qty": 60,  "opening_cost": 44.00},
+  {"sku": "JUI-MNG",  "name": "Mango Juice 1L (case of 12)",     "unit": "case", "category": "Juice",    "reorder_level": 20, "opening_qty": 55,  "opening_cost": 46.25},
+  {"sku": "DAI-MLK",  "name": "Long-life Milk 1L (case of 12)",  "unit": "case", "category": "Dairy",    "reorder_level": 35, "opening_qty": 70,  "opening_cost": 52.00},
+  {"sku": "CLD-TEA",  "name": "Iced Tea 500ml (case of 12)",     "unit": "case", "category": "Soft drinks", "reorder_level": 20, "opening_qty": 35, "opening_cost": 28.40},
+  {"sku": "SNP-CHP",  "name": "Snack Pack (carton of 24)",       "unit": "carton", "category": "Snacks", "reorder_level": 10, "opening_qty": 12,  "opening_cost": 61.00}
+]

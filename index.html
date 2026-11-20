@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Operations Portfolio | Kelvin Mushele</title>
+<meta name="description" content="AI operations and workflow automation portfolio: three working automation projects built on real business operations experience.">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --ink:#0f1b26; --ink-2:#3d4c5a; --muted:#6b7a88;
+  --line:#e3e9ef; --bg:#f6f8fa; --card:#ffffff;
+  --teal:#0f766e; --blue:#1d4ed8; --violet:#7c3aed;
+  --radius:14px;
+  --shadow:0 1px 2px rgba(15,27,38,.05), 0 8px 24px rgba(15,27,38,.06);
+}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);line-height:1.6;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--teal)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 1.25rem}
+.eyebrow{margin:0 0 .6rem;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+  font-weight:600;color:var(--muted)}
+
+/* ---------- hero ---------- */
+header.hero{
+  background:
+    radial-gradient(900px 420px at 88% -10%, rgba(15,118,110,.45), transparent 62%),
+    radial-gradient(700px 380px at 6% 110%, rgba(29,78,216,.30), transparent 60%),
+    linear-gradient(160deg,#081c26 0%,#0d2b38 48%,#0f3b45 100%);
+  color:#fff;padding:3.6rem 0 3.2rem;position:relative;overflow:hidden}
+header.hero::after{content:"";position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+  background-size:52px 52px;pointer-events:none}
+.hero .wrap{position:relative;z-index:1}
+.hero .eyebrow{color:#7fd8cf}
+.hero h1{margin:0 0 1rem;font-size:clamp(1.9rem,4.4vw,3rem);line-height:1.12;
+  letter-spacing:-.02em;font-weight:700;max-width:22ch}
+.hero h1 span{color:#7fd8cf}
+.hero .lede{margin:0;max-width:62ch;font-size:clamp(.98rem,1.7vw,1.12rem);color:#cfdde4}
+.hero .facts{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.6rem 0 0;padding:0;list-style:none}
+.hero .facts li{font-size:.78rem;padding:.35rem .7rem;border-radius:999px;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);color:#e6f1f4}
+.hero .actions{display:flex;flex-wrap:wrap;gap:.65rem;margin:1.9rem 0 0}
+.btn{display:inline-block;padding:.62rem 1.1rem;border-radius:9px;font-size:.86rem;
+  font-weight:600;text-decoration:none;border:1px solid transparent;transition:.15s}
+.btn-primary{background:#7fd8cf;color:#062b30}
+.btn-primary:hover{background:#a2e6de}
+.btn-ghost{border-color:rgba(255,255,255,.28);color:#eaf5f7}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+
+/* ---------- sections ---------- */
+section{padding:3.2rem 0}
+section.alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+h2.section-title{margin:0 0 .5rem;font-size:clamp(1.3rem,2.6vw,1.75rem);letter-spacing:-.015em}
+p.section-lede{margin:0 0 2rem;max-width:68ch;color:var(--ink-2)}
+
+/* ---------- about ---------- */
+.about-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:2.4rem;align-items:start}
+.about-grid p{margin:0 0 1rem;color:var(--ink-2)}
+.about-grid strong{color:var(--ink)}
+.side-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1.2rem 1.3rem;box-shadow:var(--shadow)}
+.side-card h3{margin:0 0 .7rem;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.side-card ul{margin:0;padding-left:1.05rem;font-size:.9rem;color:var(--ink-2)}
+.side-card li+li{margin-top:.4rem}
+
+/* ---------- toolkit ---------- */
+.toolkit{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem}
+.tool-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1.1rem 1.2rem;box-shadow:var(--shadow)}
+.tool-card h3{margin:0 0 .55rem;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem}
+.chip{font-size:.76rem;padding:.25rem .6rem;border-radius:999px;background:#eef3f7;
+  border:1px solid #dfe7ee;color:#2f4351}
+.chip.learning{background:#fff8e6;border-color:#f0e2b8;color:#7a5a10}
+
+/* ---------- projects ---------- */
+.project{background:var(--card);border:1px solid var(--line);border-radius:18px;
+  overflow:hidden;box-shadow:var(--shadow);margin:0 0 2rem}
+.project-head{display:grid;grid-template-columns:1fr;gap:0}
+.project-meta{padding:1.6rem 1.7rem 1.3rem}
+.project-num{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--muted);margin:0 0 .6rem}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block}
+.project h3{margin:0 0 .5rem;font-size:1.28rem;letter-spacing:-.01em}
+.project .problem{margin:0 0 1rem;color:var(--ink-2);font-size:.94rem}
+.project .problem b{color:var(--ink)}
+.specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.7rem;margin:0 0 1.2rem}
+.spec{background:#f8fafc;border:1px solid #e9eff4;border-radius:10px;padding:.6rem .75rem}
+.spec .k{margin:0;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.spec .v{margin:.15rem 0 0;font-size:.9rem;font-weight:600;color:var(--ink)}
+.project-shot{border-top:1px solid var(--line);background:#f0f3f6;padding:.9rem}
+.project-shot img{border-radius:9px;border:1px solid #dbe3ea}
+.links{display:flex;flex-wrap:wrap;gap:.5rem;margin:0}
+.links a{font-size:.8rem;font-weight:600;text-decoration:none;padding:.4rem .8rem;
+  border-radius:8px;border:1px solid var(--line);background:#fff;color:var(--ink-2)}
+.links a:hover{border-color:#c9d5df;color:var(--ink)}
+
+/* ---------- evidence ---------- */
+.evidence{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.9rem;margin:0 0 2rem}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.95rem 1.05rem}
+.stat .n{margin:0;font-size:1.7rem;font-weight:700;color:var(--teal);letter-spacing:-.02em}
+.stat .l{margin:.1rem 0 0;font-size:.78rem;color:var(--muted)}
+
+/* ---------- honest ---------- */
+.honest{background:#fffdf5;border:1px solid #efe3bd;border-radius:var(--radius);
+  padding:1.3rem 1.5rem}
+.honest h3{margin:0 0 .7rem;font-size:1rem;color:#7a5a10}
+.honest ul{margin:0;padding-left:1.1rem;font-size:.9rem;color:#5f5231}
+.honest li+li{margin-top:.45rem}
+
+/* ---------- contact ---------- */
+.contact-card{background:linear-gradient(150deg,#0d2b38,#12454f);color:#fff;
+  border-radius:18px;padding:2.2rem 1.8rem}
+.contact-card h2{margin:0 0 .6rem;font-size:1.5rem}
+.contact-card p{margin:0 0 1.4rem;color:#cfdde4;max-width:56ch}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+.contact-item{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
+  border-radius:10px;padding:.8rem .95rem}
+.contact-item .k{margin:0;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#8fb6c0}
+.contact-item .v{margin:.2rem 0 0;font-size:.9rem;color:#eaf5f7;word-break:break-word}
+.placeholder{color:#ffd88a}
+
+footer{padding:2rem 0 2.6rem;color:var(--muted);font-size:.8rem}
+footer p{margin:0 0 .5rem}
+
+@media(max-width:860px){
+  .about-grid{grid-template-columns:1fr;gap:1.6rem}
+  header.hero{padding:2.6rem 0 2.3rem}
+  section{padding:2.4rem 0}
+}
+@media print{
+  body{background:#fff}
+  header.hero{background:#0d2b38!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .project{break-inside:avoid;box-shadow:none}
+  .hero .actions{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">AI Operations Portfolio</p>
+    <h1>Kelvin Mushele — <span>AI operations and workflow automation</span></h1>
+    <p class="lede">
+      Ten years in FMCG sales, distribution and site operations, now building the
+      automations I used to wish existed. I take a messy business process, make the
+      rules explicit, automate the repetitive part, and keep a person in the loop
+      wherever money or a customer relationship is at stake.
+    </p>
+    <ul class="facts">
+      <li>Based in Qatar</li>
+      <li>Open to remote roles</li>
+      <li>English</li>
+      <li>Make &middot; Python &middot; SQL &middot; Excel</li>
+      <li>Level 4 CILT Logistics</li>
+    </ul>
+    <div class="actions">
+      <a class="btn btn-primary" href="#projects">See the three projects</a>
+      <a class="btn btn-ghost" href="#evidence">Testing evidence</a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <p class="eyebrow">Background</p>
+    <h2 class="section-title">Operations first, automation second</h2>
+    <div class="about-grid">
+      <div>
+        <p>
+          I spent over ten years in <strong>FMCG sales and account development</strong>,
+          including route management and account development at Coastal Bottlers
+          (Coca-Cola) and a sales officer role at Dutch Water Ltd. That work was
+          daily reconciliation: orders against stock, deliveries against promises,
+          and customers who noticed every gap.
+        </p>
+        <p>
+          In Qatar I worked in <strong>material security, stores and site operations</strong>
+          with TRAGS, including oil and gas site exposure and permit receiver duties.
+          Stores work teaches the same lesson as distribution: if the paperwork and
+          the physical stock disagree, the paperwork is wrong.
+        </p>
+        <p>
+          I am now building <strong>practical AI automation</strong> on top of that
+          experience. Not chatbots for their own sake &mdash; the boring, valuable
+          parts: triaging enquiries so urgent ones are seen, keeping stock records
+          that survive an audit, and making sure a serious lead does not sit
+          unanswered behind a price request.
+        </p>
+        <p>
+          Everything on this page is something I built, ran and tested myself. The
+          three projects below are portfolio work with synthetic data, not client
+          deliveries, and each one states its own limitations.
+        </p>
+      </div>
+      <aside class="side-card">
+        <h3>Qualifications</h3>
+        <ul>
+          <li>Diploma in Business Management</li>
+          <li>Level 4 CILT qualification in Logistics and Transport</li>
+          <li>Over 10 years FMCG sales and account development</li>
+          <li>Stores, inventory and permit-to-work experience</li>
+        </ul>
+        <h3 style="margin-top:1.1rem">Currently developing</h3>
+        <ul>
+          <li>Make scenario design from written specifications</li>
+          <li>Python for data and process automation</li>
+          <li>Local LLMs (Ollama) and AI API integration</li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="toolkit">
+  <div class="wrap">
+    <p class="eyebrow">Toolkit</p>
+    <h2 class="section-title">What I actually use</h2>
+    <p class="section-lede">
+      Split honestly: tools I have used to build and ship something, and tools I am
+      learning. Nothing here is listed because it looked good on a job advert.
+    </p>
+    <div class="toolkit">
+      <div class="tool-card">
+        <h3>Automation</h3>
+        <div class="chips">
+          <span class="chip">Make (build specs)</span>
+          <span class="chip">Zapier</span>
+          <span class="chip">Webhooks</span>
+          <span class="chip">Cron schedules</span>
+        </div>
+      </div>
+      <div class="tool-card">
+        <h3>Code and data</h3>
+        <div class="chips">
+          <span class="chip">Python</span>
+          <span class="chip">SQL / SQLite</span>
+          <span class="chip">REST APIs</span>
+          <span class="chip">JSON</span>
+          <span class="chip">Git</span>
+        </div>
+      </div>
+      <div class="tool-card">
+        <h3>AI</h3>
+        <div class="chips">
+          <span class="chip">Ollama</span>
+          <span class="chip">DeepSeek</span>
+          <span class="chip">Claude</span>
+          <span class="chip">ChatGPT</span>
+          <span class="chip">Prompt design</span>
+        </div>
+      </div>
+      <div class="tool-card">
+        <h3>Business</h3>
+        <div class="chips">
+          <span class="chip">Excel</span>
+          <span class="chip">Google Sheets</span>
+          <span class="chip">Stock control</span>
+          <span class="chip">Route sales</span>
+          <span class="chip">Process mapping</span>
+        </div>
+      </div>
+      <div class="tool-card">
+        <h3>Learning</h3>
+        <div class="chips">
+          <span class="chip learning">HubSpot API</span>
+          <span class="chip learning">Docker</span>
+          <span class="chip learning">Power BI</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <p class="eyebrow">Portfolio</p>
+    <h2 class="section-title">Three working automations</h2>
+    <p class="section-lede">
+      Each project has a runnable Python implementation, a Make scenario build
+      specification, a dashboard generated from real run data, and tests. Each one
+      states what it does not do.
+    </p>
+
+    <!-- project 1 -->
+    <article class="project">
+      <div class="project-head">
+        <div class="project-meta">
+          <p class="project-num"><span class="dot" style="background:var(--teal)"></span>Project 01 &middot; Customer support</p>
+          <h3>AI customer support triage</h3>
+          <p class="problem">
+            <b>Problem.</b> A distributor answers the same questions all day. Routine
+            enquiries queue behind urgent ones, and complaints about damaged or unsafe
+            stock get answered by whoever is free, with no escalation rule.
+          </p>
+          <div class="specs">
+            <div class="spec"><p class="k">Approach</p><p class="v">Rules route, model writes</p></div>
+            <div class="spec"><p class="k">Escalation</p><p class="v">Refund, legal, safety, urgent</p></div>
+            <div class="spec"><p class="k">Control</p><p class="v">Human approval before send</p></div>
+            <div class="spec"><p class="k">Demo run</p><p class="v">9 accepted, 4 escalated</p></div>
+          </div>
+          <div class="links">
+            <a href="PROJECT-01-CUSTOMER-SUPPORT/README.md">README</a>
+            <a href="PROJECT-01-CUSTOMER-SUPPORT/architecture.md">Architecture</a>
+            <a href="PROJECT-01-CUSTOMER-SUPPORT/test-cases.md">Tests</a>
+            <a href="PROJECT-01-CUSTOMER-SUPPORT/make-scenario.json">Make build spec</a>
+            <a href="PROJECT-01-CUSTOMER-SUPPORT/dashboard.html">Dashboard</a>
+          </div>
+        </div>
+      </div>
+      <div class="project-shot">
+        <img src="PROJECT-01-CUSTOMER-SUPPORT/screenshots/01-dashboard.jpeg"
+             alt="Customer support triage dashboard showing ticket queue, escalation reasons and rejected input"
+             loading="lazy">
+      </div>
+    </article>
+
+    <!-- project 2 -->
+    <article class="project">
+      <div class="project-head">
+        <div class="project-meta">
+          <p class="project-num"><span class="dot" style="background:var(--blue)"></span>Project 02 &middot; Inventory</p>
+          <h3>AI inventory and stock control</h3>
+          <p class="problem">
+            <b>Problem.</b> Small distributors oversell stock they do not have, miss
+            stockouts until a customer complains, and cannot explain shrinkage because
+            records get edited in place.
+          </p>
+          <div class="specs">
+            <div class="spec"><p class="k">Costing</p><p class="v">Moving average</p></div>
+            <div class="spec"><p class="k">Audit trail</p><p class="v">Every movement kept</p></div>
+            <div class="spec"><p class="k">Anomalies</p><p class="v">4 explicit thresholds</p></div>
+            <div class="spec"><p class="k">Demo run</p><p class="v">22 posted, 1 oversell refused</p></div>
+          </div>
+          <div class="links">
+            <a href="PROJECT-02-INVENTORY-MANAGEMENT/README.md">README</a>
+            <a href="PROJECT-02-INVENTORY-MANAGEMENT/architecture.md">Architecture</a>
+            <a href="PROJECT-02-INVENTORY-MANAGEMENT/test-cases.md">Tests</a>
+            <a href="PROJECT-02-INVENTORY-MANAGEMENT/make-scenario.json">Make build spec</a>
+            <a href="PROJECT-02-INVENTORY-MANAGEMENT/dashboard.html">Dashboard</a>
+          </div>
+        </div>
+      </div>
+      <div class="project-shot">
+        <img src="PROJECT-02-INVENTORY-MANAGEMENT/screenshots/01-dashboard.jpeg"
+             alt="Inventory dashboard showing stock on hand, open alerts, recent movements and rejected input"
+             loading="lazy">
+      </div>
+    </article>
+
+    <!-- project 3 -->
+    <article class="project">
+      <div class="project-head">
+        <div class="project-meta">
+          <p class="project-num"><span class="dot" style="background:var(--violet)"></span>Project 03 &middot; Sales</p>
+          <h3>AI sales lead management</h3>
+          <p class="problem">
+            <b>Problem.</b> Every enquiry gets the same reply, so a forty-site contract
+            waits behind a one-shop price request. The same buyer enquires twice, and
+            nobody can say why one lead was chased and another was not.
+          </p>
+          <div class="specs">
+            <div class="spec"><p class="k">Scoring</p><p class="v">6 named rules, max 73</p></div>
+            <div class="spec"><p class="k">Deduplication</p><p class="v">Reference and email</p></div>
+            <div class="spec"><p class="k">Wording</p><p class="v">Band A / B / C</p></div>
+            <div class="spec"><p class="k">Demo run</p><p class="v">10 leads, 2 in band A</p></div>
+          </div>
+          <div class="links">
+            <a href="PROJECT-03-SALES-AUTOMATION/README.md">README</a>
+            <a href="PROJECT-03-SALES-AUTOMATION/architecture.md">Architecture</a>
+            <a href="PROJECT-03-SALES-AUTOMATION/test-cases.md">Tests</a>
+            <a href="PROJECT-03-SALES-AUTOMATION/make-scenario.json">Make build spec</a>
+            <a href="PROJECT-03-SALES-AUTOMATION/dashboard.html">Dashboard</a>
+          </div>
+        </div>
+      </div>
+      <div class="project-shot">
+        <img src="PROJECT-03-SALES-AUTOMATION/screenshots/01-dashboard.jpeg"
+             alt="Sales lead dashboard showing leads ranked by score, points breakdown and follow-ups awaiting approval"
+             loading="lazy">
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="alt" id="evidence">
+  <div class="wrap">
+    <p class="eyebrow">Evidence</p>
+    <h2 class="section-title">What the tests actually cover</h2>
+    <p class="section-lede">
+      Every number below comes from running the code in this folder. The suite
+      covers the happy path, invalid input, missing data, control failures and a
+      parity check between the Python logic and the Make reference rules.
+    </p>
+    <div class="evidence">
+      <div class="stat"><p class="n">90</p><p class="l">automated tests, all passing</p></div>
+      <div class="stat"><p class="n">3</p><p class="l">Make scenario build specs</p></div>
+      <div class="stat"><p class="n">0</p><p class="l">third-party Python packages</p></div>
+      <div class="stat"><p class="n">2</p><p class="l">implementations cross-checked</p></div>
+    </div>
+    <div class="honest">
+      <h3>What I am not claiming</h3>
+      <ul>
+        <li>These are portfolio projects with synthetic data, not paid client work.</li>
+        <li>No business results, savings or conversion figures are claimed. The demo numbers describe the demo.</li>
+        <li>The Make specs are validated structurally and their reference rules are executed with Node and cross-checked against the Python code. No scenario has been built or run inside Make.</li>
+        <li>The local model writes reply text. It does not make routing, scoring or escalation decisions, and the projects run without it.</li>
+        <li>I am not a senior AI engineer. I build practical automations, document them, and say where they stop.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-card">
+      <h2>Get in touch</h2>
+      <p>
+        Open to remote AI operations, automation and business operations roles, and
+        to small automation projects. I am happy to walk through any project on a
+        call and show the code running.
+      </p>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <p class="k">Email</p>
+          <p class="v"><a href="mailto:nkmushele@gmail.com">nkmushele@gmail.com</a></p>
+        </div>
+        <div class="contact-item">
+          <p class="k">Location</p>
+          <p class="v">Doha, Qatar &middot; remote worldwide</p>
+        </div>
+        <div class="contact-item">
+          <p class="k">GitHub</p>
+          <p class="v"><a href="https://github.com/nkmushele-rgb">github.com/nkmushele-rgb</a></p>
+        </div>
+        <div class="contact-item">
+          <p class="k">Source</p>
+          <p class="v"><a href="https://github.com/nkmushele-rgb/ai-operations-portfolio">Portfolio repository</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Portfolio built and tested locally. Synthetic data throughout, no client or personal data.</p>
+    <p>Synthetic data throughout. Portfolio projects, not paid client deliveries.</p>
+  </div>
+</footer>
+
+</body>
+</html>

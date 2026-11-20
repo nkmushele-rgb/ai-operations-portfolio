@@ -1,0 +1,77 @@
+{
+  "spec_version": 1,
+  "platform": "Make.com",
+  "verified_in_make": false,
+  "status": "Build specification, not an imported or executed blueprint",
+  "scenario": {
+    "name": "P3 - AI sales lead management",
+    "purpose": "Score a lead against published criteria and draft a band-matched follow-up for human approval.",
+    "schedule": "On demand - custom webhook",
+    "steps": [
+      {
+        "step": 1,
+        "module": "Webhook > Custom webhook",
+        "label": "New lead",
+        "config": "POST. Accept external_id, name, email, company, source, role, employees, budget, timeline and message."
+      },
+      {
+        "step": 2,
+        "module": "Tools > Set variable",
+        "label": "Score and draft",
+        "config": "Apply make-logic.js. Output score, band, segment, score_reason, status and a band-matched draft_subject and draft_body. approved starts false."
+      },
+      {
+        "step": 3,
+        "module": "Router",
+        "label": "Band A?",
+        "config": "Route on band = A from step 2."
+      },
+      {
+        "step": 4,
+        "module": "Google Sheets > Add a row",
+        "label": "Flag for priority call",
+        "config": "Append to sheet 'Priority leads'. Leave inactive until a Sheets connection exists."
+      },
+      {
+        "step": 5,
+        "module": "Webhook > Webhook response",
+        "label": "Return result",
+        "config": "Return the step 2 result as JSON."
+      }
+    ],
+    "routes": [
+      {
+        "from": 1,
+        "to": 2,
+        "condition": "always"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "condition": "always"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "condition": "band = A"
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "condition": "band is B or C"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "condition": "always"
+      }
+    ],
+    "rules_file": "make-logic.js",
+    "rules_note": "Six named rules, maximum 73 points. Every point is returned in score_reason so a salesperson can challenge the ranking.",
+    "approval_gate": "approved starts false. The scenario drafts a follow-up but never sends it; a person reviews and sends from the CRM or mailbox.",
+    "error_handling": "Set optional Sheets and Email modules to continue on error so a failed write cannot block the webhook response. Retry once on transient errors. Keep the scenario in draft until credentials are configured.",
+    "credentials_required": [
+      "Google Sheets (optional - not connected in this repository)"
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Customer Support Triage</title>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:#f4f6f8;color:#16202a;line-height:1.55;
+ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:#0f766e}
+.hero{background:linear-gradient(135deg,#0b2b3c 0%,#123b4f 58%,#0f766e 135%);color:#fff;padding:2.2rem 1.4rem 1.9rem}
+.wrap{max-width:1180px;margin:0 auto}
+.eyebrow{margin:0 0 .45rem;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;opacity:.75}
+.hero h1{margin:0 0 .55rem;font-size:clamp(1.45rem,3.1vw,2.05rem);line-height:1.2}
+.lede{margin:0;max-width:62ch;opacity:.92;font-size:.95rem}
+.stamp{margin:.85rem 0 0;font-size:.75rem;opacity:.7}
+main{max-width:1180px;margin:0 auto;padding:1.5rem 1.4rem 2.5rem}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.85rem;margin:0 0 1.5rem}
+.stat{background:#fff;border:1px solid #e2e8ee;border-radius:12px;padding:.85rem 1rem}
+.stat .k{margin:0;font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;color:#5b6b7a}
+.stat .v{margin:.22rem 0 0;font-size:1.45rem;font-weight:650;color:#0f766e}
+.stat .h{margin:.18rem 0 0;font-size:.73rem;color:#7a8896}
+.panel{background:#fff;border:1px solid #e2e8ee;border-radius:12px;padding:1rem 1.15rem 1.2rem;margin:0 0 1.2rem}
+.panel h2{margin:0 0 .2rem;font-size:1rem}
+.panel .desc{margin:0 0 .8rem;font-size:.83rem;color:#5b6b7a}
+.tw{overflow-x:auto;border:1px solid #eef2f6;border-radius:9px}
+table{border-collapse:collapse;width:100%;font-size:.83rem;min-width:520px}
+th{background:#f7f9fb;text-align:left;padding:.5rem .65rem;border-bottom:1px solid #e6ecf2;
+ font-size:.69rem;letter-spacing:.07em;text-transform:uppercase;color:#5b6b7a;white-space:nowrap}
+td{padding:.45rem .65rem;border-bottom:1px solid #f1f5f8;vertical-align:top}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:nth-child(even){background:#fcfdfe}
+.muted{color:#9aa7b3}
+.pill{display:inline-block;padding:.08rem .48rem;border-radius:999px;font-size:.71rem;
+ font-weight:600;border:1px solid transparent;white-space:nowrap}
+.pill-red{background:#fdeceb;color:#a52a1f;border-color:#f7cdc8}
+.pill-amber{background:#fdf5e3;color:#8a5a06;border-color:#f4e2b8}
+.pill-green{background:#e9f7ee;color:#1c6b3a;border-color:#c6e8d3}
+.pill-blue{background:#eaf2fd;color:#1a4f8a;border-color:#c9ddf7}
+.pill-grey{background:#f0f3f6;color:#4d5b68;border-color:#dfe6ec}
+.empty{padding:.9rem;color:#7a8896;font-size:.83rem}
+.notes{background:#fffdf5;border:1px solid #f0e4bf;border-radius:12px;padding:.95rem 1.15rem}
+.notes h2{margin:0 0 .45rem;font-size:.93rem;color:#7a5a10}
+.notes ul{margin:0;padding-left:1.05rem;font-size:.83rem;color:#5f5231}
+.notes li+li{margin-top:.28rem}
+footer{max-width:1180px;margin:0 auto;padding:0 1.4rem 2.2rem;font-size:.75rem;color:#7a8896}
+.back{display:inline-block;margin:0 0 .9rem;font-size:.79rem;text-decoration:none}
+@media(max-width:640px){.hero{padding:1.7rem 1rem 1.4rem}main{padding:1.1rem 1rem 2rem}}
+@media print{body{background:#fff}.back{display:none}
+ .hero{background:#0b2b3c!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <a class="back" href="../index.html">&larr; Portfolio home</a>
+    <p class="eyebrow">AI Operations Portfolio</p>
+    <h1>AI Customer Support Triage</h1>
+    <p class="lede">Classifies inbound customer messages, drafts a reply, and holds every draft for human approval. Complaints, billing disputes and safety mentions are escalated instead of auto-answered.</p>
+    <p class="stamp">Generated 20 Nov 2026, 06:35 UTC</p>
+  </div>
+</header>
+<main>
+  <div class="stats"><div class="stat"><p class="k">Tickets today</p><p class="v">9</p><p class="h">2026-11-20</p></div><div class="stat"><p class="k">Escalated</p><p class="v">4</p><p class="h">44.4% of volume</p></div><div class="stat"><p class="k">Needs review</p><p class="v">1</p><p class="h">low classifier confidence</p></div><div class="stat"><p class="k">Rejected input</p><p class="v">3</p><p class="h">failed validation</p></div></div>
+  <section class="panel"><h2>Ticket queue</h2><p class="desc">Every message, its classification and where it sits in the approval flow.</p><div class="tw"><table><thead><tr><th>#</th><th>Ref</th><th>Customer</th><th>Category</th><th>Urgency</th><th>Status</th><th>Escalation</th><th>Draft</th></tr></thead><tbody><tr><td>9</td><td>CS-1011</td><td>Lucy Achieng</td><td><span class="pill pill-red">complaint</span></td><td><span class="pill pill-red">high</span></td><td><span class="pill pill-red">escalated</span></td><td><span class="pill pill-red">escalated</span></td><td><span class="pill pill-grey">template</span></td></tr><tr><td>8</td><td>CS-1010</td><td>Ahmed Said</td><td><span class="pill pill-grey">request</span></td><td><span class="pill pill-amber">low</span></td><td><span class="pill pill-amber">awaiting_approval</span></td><td><span class="muted">&mdash;</span></td><td><span class="pill pill-grey">template</span></td></tr><tr><td>7</td><td>CS-1009</td><td>Mary Njoroge</td><td><span class="pill pill-grey">other</span></td><td><span class="pill pill-amber">low</span></td><td><span class="pill pill-amber">awaiting_approval</span></td><td><span class="muted">&mdash;</span></td><td><span class="pill pill-grey">template</span></td></tr><tr><td>6</td><td>CS-1008</td><td>Joseph Kariuki</td><td><span class="pill pill-grey">request</span></td><td><span class="pill pill-red">high</span></td><td><span class="pill pill-red">escalated</span></td><td><span class="pill pill-red">escalated</span></td><td><span class="pill pill-grey">template</span></td></tr><tr><td>5</td><td>CS-1005</td><td>Fatuma Ali</td><td><span class="pill pill-grey">feedback</span></td><td><span class="pill pill-amber">low</span></td><td><span class="pill pill-amber">awaiting_approval</span></td><td><span class="muted">&mdash;</span></td><td><span class="pill pill-grey">template</span></td></tr><tr><td>4</td><td>CS-1004</td><td>Peter Mwangi</td><td><span class="pill pill-grey">billing</span></td><td><span class="pill pill-amber">low</span></td><td><span class="pill pill-red">escalated</span></td><td><span class="pill pill-red">escalated</span></td><td><span class="pill pill-grey">template</span></td></tr><tr><td>3</td><td>CS-1003</td><td>Grace Wanjiru</td><td><span class="pill pill-grey">request</span></td><td><span class="pill pill-amber">low</span></td><td><span class="pill pill-amber">awaiting_approval</span></td><td><span class="muted">&mdash;</span></td><td><span class="pill pill-grey">template</span></td></tr><tr><td>2</td><td>CS-1002</td><td>Daniel Otieno</td><td><span class="pill pill-blue">inquiry</span></td><td><span class="pill pill-amber">low</span></td><td><span class="pill pill-amber">awaiting_approval</span></td><td><span class="muted">&mdash;</span></td><td><span class="pill pill-grey">template</span></td></tr><tr><td>1</td><td>CS-1001</td><td>Amina Yusuf</td><td><span class="pill pill-red">complaint</span></td><td><span class="pill pill-red">high</span></td><td><span class="pill pill-red">escalated</span></td><td><span class="pill pill-red">escalated</span></td><td><span class="pill pill-grey">template</span></td></tr></tbody></table></div></section><section class="panel"><h2>Escalation reasons</h2><p class="desc">Why each escalated ticket needs a human before anything is sent.</p><div class="tw"><table><thead><tr><th>Ref</th><th>Customer</th><th>Reason</th></tr></thead><tbody><tr><td>CS-1011</td><td>Lucy Achieng</td><td>mentions refund, compensation, legal, health or safety; marked urgent by the sender</td></tr><tr><td>CS-1008</td><td>Joseph Kariuki</td><td>marked urgent by the sender</td></tr><tr><td>CS-1004</td><td>Peter Mwangi</td><td>mentions refund, compensation, legal, health or safety</td></tr><tr><td>CS-1001</td><td>Amina Yusuf</td><td>mentions refund, compensation, legal, health or safety; marked urgent by the sender; negative complaint; asks for a manager or escalation</td></tr></tbody></table></div></section><section class="panel"><h2>Rejected input</h2><p class="desc">Messages stopped by validation, with the reason. Nothing is silently dropped.</p><div class="tw"><table><thead><tr><th>Ref</th><th>Problem</th><th>When</th></tr></thead><tbody><tr><td>CS-1012</td><td>body must be at least 10 characters</td><td>2026-11-20T06:35:36Z</td></tr><tr><td>CS-1007</td><td>body is required</td><td>2026-11-20T06:35:36Z</td></tr><tr><td>CS-1006</td><td>customer_email is not a valid email address</td><td>2026-11-20T06:35:36Z</td></tr></tbody></table></div></section>
+  <section class="notes"><h2>Limitations and assumptions</h2><ul><li>Synthetic sample data only. No real customer records are used.</li><li>Reply drafts are written by a local model when one is running, otherwise by a fixed template.</li><li>Nothing is sent automatically. `send` refuses unless a named person approved the draft.</li><li>Category and urgency come from keyword rules, not the model, so the routing is reproducible.</li><li>Escalated tickets are never auto-sent, even after approval.</li></ul></section>
+</main>
+<footer>Project 1 of 3 - AI Operations portfolio. Figures describe the demo run, not client results.</footer>
+</body>
+</html>
