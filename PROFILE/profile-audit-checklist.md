@@ -101,11 +101,13 @@ offered; Business Process Automation → Automation + Business Operations.
   logic in Python and SQLite, and use a local model only to write prose." The
   profile page was re-read: it contains "Make scenarios", no "n8n", and the
   title, 10 skills, English, 10 years and GitHub link are unchanged.
-- A signed-out tab returned "Profile not found — the profile is not public or
-  does not exist" for both profile URLs, while the edit form shows privacy
-  `Everyone`. A signed-in "View profile" renders correctly. Treat anonymous
-  visibility as unverified; do not promise a recruiter that the public link
-  works until the learner checks it in a browser with no login.
+- Anonymous access is confirmed broken: on 20 Nov an unauthenticated fetch of
+  both `https://hubstafftalent.net/profiles/kelvin-mushele` and the old
+  `kelvin-nyinge` slug returned HTTP 404 ("Profile not found"), while the edit
+  form shows privacy `Everyone` and a signed-in "View profile" renders. Do not
+  send the profile link to a recruiter until the learner checks it in a truly
+  signed-out browser or asks Hubstaff support; the site may cache or gate
+  anonymous profiles.
 - Portfolio website was published on 20 November 2026. On the same day the
   `Portfolio site` field was added and the signed-in profile page was re-read:
   it links to <https://nkmushele-rgb.github.io/ai-operations-portfolio/>.
