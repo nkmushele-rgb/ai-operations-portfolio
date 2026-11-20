@@ -52,11 +52,11 @@ irreversible actions. Those gaps are listed in the architecture notes."
 
 ## Safe-to-publish checklist
 
-- [ ] Synthetic or public data only.
-- [ ] No API keys, tokens, webhook URLs, passwords or personal data in files or screenshots.
-- [ ] Placeholder contact details replaced before the site goes live.
-- [ ] Employment dates and titles confirmed by the learner.
-- [ ] No client results, savings or performance figures.
-- [ ] Limitations visible on the website and in each project README.
-- [ ] Make claim matches `make-verification.md`; no "importable" or "tested in
+- [x] Synthetic or public data only.
+- [x] No API keys, tokens, webhook URLs, passwords or personal data in files or screenshots.
+- [x] Placeholder contact details replaced before the site went live.
+- [ ] Employment dates, territory and qualification years confirmed by the learner.
+- [x] No client results, savings or performance figures.
+- [x] Limitations visible on the website and in each project README.
+- [x] Make claim matches `make-verification.md`; no "importable" or "tested in
       Make" wording.
