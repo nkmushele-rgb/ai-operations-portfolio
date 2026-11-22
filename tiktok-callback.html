@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>TikTok authorization handoff</title>
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+           max-width: 34rem; margin: 4rem auto; padding: 0 1rem;
+           line-height: 1.6; color: #1f2328; }
+    code { background: #f3f4f6; padding: 2px 6px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <h1>Finishing TikTok authorization</h1>
+  <p id="status">Passing the approval back to the local NEXORA dashboard&hellip;</p>
+  <p>If nothing happens, start again from
+    <code>http://127.0.0.1:8050/</code> and click <strong>Connect TikTok</strong>.</p>
+  <script>
+    (function () {
+      var allowed = ["code", "state", "scopes", "error", "error_description"];
+      var incoming = new URLSearchParams(window.location.search);
+      var forward = new URLSearchParams();
+      allowed.forEach(function (key) {
+        var value = incoming.get(key);
+        if (value !== null) { forward.set(key, value); }
+      });
+      if (!forward.has("code") && !forward.has("error")) {
+        document.getElementById("status").textContent =
+          "No authorization code in this link. Start again from the dashboard.";
+        return;
+      }
+      window.location.replace(
+        "http://127.0.0.1:8050/oauth/tiktok/callback?" + forward.toString());
+    })();
+  </script>
+</body>
+</html>
